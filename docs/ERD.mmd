@@ -1,0 +1,17 @@
+erDiagram
+ USERS ||--o{ CUSTOMERS : creates
+ USERS ||--o{ ENQUIRIES : creates
+ CUSTOMERS ||--o{ ENQUIRIES : submits
+ ENQUIRIES ||--|{ ENQUIRY_ITEMS : contains
+ PRODUCTS ||--o{ ENQUIRY_ITEMS : requested
+ ENQUIRIES ||--o{ QUOTATIONS : receives
+ QUOTATIONS ||--|{ QUOTATION_ITEMS : contains
+ PRODUCTS ||--o{ QUOTATION_ITEMS : quoted
+ QUOTATIONS ||--o| SALES_ORDERS : converts_to
+ CUSTOMERS ||--o{ SALES_ORDERS : owns
+ SALES_ORDERS ||--|{ SALES_ORDER_ITEMS : contains
+ PRODUCTS ||--o{ SALES_ORDER_ITEMS : ordered
+ PRODUCTS ||--|| INVENTORY : tracks
+ SALES_ORDERS ||--o| DISPATCHES : fulfilled_by
+ DISPATCHES ||--|{ DISPATCH_ITEMS : contains
+ PRODUCTS ||--o{ DISPATCH_ITEMS : dispatched
